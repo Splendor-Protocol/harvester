@@ -4,7 +4,7 @@ services:
 
   harvester:
     build: .
-    image: polkascan/harvester
+    image: camfairchild/harvester
     restart: unless-stopped
     entrypoint: /usr/src/start.sh
     ports:
@@ -15,6 +15,7 @@ services:
 #      - SUBSTRATE_RPC_URL=ws://host.docker.internal:9944
       - NODE_TYPE=archive
       - SUBSTRATE_SS58_FORMAT=42
+      - TYPE_REGISTRY=substrate-node-template
     depends_on:
       - mysql
 
